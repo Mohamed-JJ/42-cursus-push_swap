@@ -6,23 +6,38 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/24 22:06:03 by mjarboua         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:39:02 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*convert_arr(char **str)
+int	check_number(char *str)
 {
-	int	i = 0;
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == ' '))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	*convert_arr(char **str, int f)
+{
+	int	i;
 	int	*ptr;
 
+	i = 0;
 	ptr = malloc((get_arr_len(str)) * sizeof(int));
-	str++;
+	if (f == 1)
+		str++;
 	while (*str)
 	{
 		ptr[i] = ft_atoi(*str);
-		printf("%d\n", ptr[i]);
 		i++;
 		str++;
 	}
@@ -30,7 +45,7 @@ int	*convert_arr(char **str)
 	return (ptr);
 }
 
-int	chech_if_nmuber(char **str)
+int	check_number_arr(char **str)
 {
 	int	i;
 	int	j;

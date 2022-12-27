@@ -5,6 +5,8 @@ SRC = write_functions.c \
 		parsing.c \
 		libft_func.c \
 		libft_func2.c \
+		ft_split.c \
+		split_convert.c \
 
 OBJ = $(SRC:.c=.o)
 

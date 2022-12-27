@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/24 16:08:41 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/27 21:11:47 by mjarboua         ###   ########.fr       */
+/*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
+/*   Updated: 2022/12/27 22:31:04 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	free_node(t_node *node)
 {
-	int		*c;
+	free(node->element);
+	node->next = NULL;
+	free(node);
+}
 
-	if (ac < 2)
-		return (write(2, "Error\n", 6), 0);
-	else if (ac == 2)
-	{
-		if (check_number(av[1]) == 0)
-			write(2, "Error\n", 6);
-		c = split_arr(av[1]);
-	}
-	else
-	{
-		if (check_number_arr(av) == 0)
-			write(2, "Error\n", 6);
-		c = convert_arr(av, 1);
-	}
-	check_if_double(c);
+void	push_from_a_b(t_node *stack_a, t_node *stack_b, void (*f)(t_node *))
+{
+	t_node	*tmp;
+
+	ft_lst_last()
 }

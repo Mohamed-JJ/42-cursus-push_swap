@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:34:53 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/24 21:05:59 by mjarboua         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:26:21 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int	get_arr_len(char **str)
 	i = 0;
 	while (str[i])
 		i++;
-	return (i);	
+	return (i);
 }

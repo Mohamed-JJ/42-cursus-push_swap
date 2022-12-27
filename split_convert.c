@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   split_convert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/24 16:08:41 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/27 21:11:47 by mjarboua         ###   ########.fr       */
+/*   Created: 2022/12/26 13:55:31 by mjarboua          #+#    #+#             */
+/*   Updated: 2022/12/26 16:27:22 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int	*split_arr(char *str)
 {
-	int		*c;
+	char	**arr;
+	int		*ret;
+	int		i;
 
-	if (ac < 2)
-		return (write(2, "Error\n", 6), 0);
-	else if (ac == 2)
+	i = 0;
+	arr = ft_split(str, ' ');
+	ret = convert_arr(arr, 0);
+	while (arr[i])
 	{
-		if (check_number(av[1]) == 0)
-			write(2, "Error\n", 6);
-		c = split_arr(av[1]);
+		free(arr[i]);
+		i++;
 	}
-	else
-	{
-		if (check_number_arr(av) == 0)
-			write(2, "Error\n", 6);
-		c = convert_arr(av, 1);
-	}
-	check_if_double(c);
+	free(arr);
+	return (ret);
 }
