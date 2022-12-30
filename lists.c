@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 22:27:35 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/27 21:30:04 by mjarboua         ###   ########.fr       */
+/*   Updated: 2022/12/30 20:33:40 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_node	*ft_lstnew(int content)
 	new = malloc(sizeof(t_node));
 	if (!new)
 		return (NULL);
-	new->ele = content;
+	new->element = content;
 	new->next = NULL;
 	return (new);
 }
@@ -51,7 +51,7 @@ t_node	*ft_last_node(t_node *node)
 {
 	if (!node)
 		return (NULL);
-	while (node)
+	while (node->next)
 		node = node->next;
 	return (node);
 }
@@ -70,14 +70,3 @@ int	ft_lstsize(t_node *d)
 	}
 	return (i);
 }
-
-
-void	create_list(t_node **head, int *i)
-{
-	t_node	*new;
-
-	new = ft_lst_new()
-}
-
-
-int i  = {1,2,3,4,5,6};
