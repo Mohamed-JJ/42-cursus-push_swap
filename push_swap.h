@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/29 13:40:01 by mjarboua         ###   ########.fr       */
+/*   Updated: 2022/12/31 15:13:53 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,12 @@ char	*ft_strdup(char *s1);
 char	*ft_strjoin(char *s1, char *s2);
 
 // list functions
-t_node	*ft_lstnew(int content);
 void	ft_lstadd_back(t_node **lst, t_node *new);
 void	ft_lstadd_front(t_node **lst, t_node *new);
+void	ft_before_last(t_node **node);
 t_node	*ft_last_node(t_node *node);
 int		ft_lstsize(t_node *d);
+t_node	*ft_lstnew(int content);
 
 // helping functions
 void	ft_putc(char c);

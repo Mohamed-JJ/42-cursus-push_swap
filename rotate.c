@@ -1,53 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/31 14:38:34 by mjarboua         ###   ########.fr       */
+/*   Created: 2022/12/31 14:42:20 by mjarboua          #+#    #+#             */
+/*   Updated: 2022/12/31 16:39:26 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_before_last(t_node **node)
+void	rotate_a(t_node **a)
 {
-	if (!(*node))
-		return ;
-	while ((*node)->next->next)
-		(*node) = (*node)->next;
-}
-
-void	push_a_to_b(t_node **a, t_node **b)
-{
-	t_node	*ptr_a;
+	t_node	*temp;
 	t_node	*head;
 
-	if (!(*a))
-		return ;
-	head = (*a);
-	ptr_a = ft_last_node((*a));
-	ft_before_last(&head);
-	ft_lstadd_back(b, ptr_a);
-	head->next = NULL;
-	a = &head;
+	temp = (*a);
+	head = (*a)->next;
+	(*a) = (*a)->next;
+	while ((*a)->next)
+		(*a) = (*a)->next;
+	temp->next = NULL;
+	(*a)->next = temp;
+	(*a) = (*a)->next;
+	(*a) = head;
+	(*a) = head;
 }
 
-void	push_b_to_a(t_node **a, t_node **b)
+
+void	rotate_b(t_node **b)
 {
-	t_node	*ptr_a;
+	t_node	*temp;
 	t_node	*head;
 
-	if (!(*a))
-		return ;
-	head = (*b);
-	ptr_a = ft_last_node((*b));
-	ft_before_last(&head);
-	ft_lstadd_back(a, ptr_a);
-	head->next = NULL;
-	b = &head;
+	temp = (*b);
+	head = (*b)->next;
+	(*b) = (*b)->next;
+	while ((*b)->next)
+		(*b) = (*b)->next;
+	temp->next = NULL;
+	(*b)->next = temp;
+	(*b) = (*b)->next;
+	(*b) = head;
+	(*b) = head;
+}
+
+void	rr(t_node **a, t_node **b)
+{
+	rotate_a(a);
+	rotate_b(b);
 }
 
 // int	main(int ac, char **av)
@@ -87,7 +90,9 @@ void	push_b_to_a(t_node **a, t_node **b)
 // 	s1->next = s2;
 // 	s2->next = s3;
 // 	s3->next = NULL;
-// 	push_b_to_a(&l, &s);
+// 	// push_b_to_a(&l, &s);
+// 	// rotate(&l);
+// 	rr(&l, &s);
 // 	while (l)
 // 	{
 // 		printf("the first l node's content --> %d\n", l->element);
