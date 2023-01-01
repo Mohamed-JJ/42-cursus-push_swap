@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 21:26:53 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/29 14:03:12 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:53:15 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,28 @@ int	ft_atoi(char *str)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	total_len;
-	char			*mstr;
+	size_t	i;
+	size_t	c;
+	char	*str;
 
-	if (!s2)
+	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
-		ft_strdup("");
-	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	mstr = malloc(total_len * sizeof(char));
-	if (!mstr)
-		return (NULL);
-	i = 0;
-	while (s1[i])
 	{
-		mstr[i] = ((char *)s1)[i];
-		i++;
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
 	}
-	j = 0;
-	while (s2[j])
-		mstr[i++] = ((char *)s2)[j++];
-	mstr[i] = '\0';
-	return (mstr);
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	i = -1;
+	c = 0;
+	if (s1)
+		while (s1[++i] != '\0')
+			str[i] = s1[i];
+	while (s2[c] != '\0')
+		str[i++] = s2[c++];
+	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	free(s1);
+	return (str);
 }

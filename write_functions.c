@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:34:53 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/25 12:26:21 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:45:06 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,14 @@ int	get_arr_len(char **str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+void	p_exit(int code)
+{
+	if (code == 1)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	exit (0);
 }

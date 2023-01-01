@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/26 18:39:02 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:48:40 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	check_number(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!((str[i] >= '0' && str[i] <= '9') || str[i] == ' '))
+		if (!((str[i] >= '0' && str[i] <= '9')
+				|| str[i] == ' ' || str[i] == '+' || str[i] == '-'))
 			return (0);
 		i++;
 	}
@@ -92,3 +93,32 @@ void	check_if_double(int *arr)
 		i++;
 	}
 }
+
+// t_node	*uni_check(char **av, int ac)
+// {
+// 	int		i;
+// 	t_node	*head;
+// 	char 	*num;
+
+// 	i = 1;
+// 	if (ac == 2)
+// 		av = checked_splitted(av[1]);
+// 	else if (ac > 2)
+// 		av = joined_string(av);
+// 	if (check_if_not(av));
+// }
+
+// char	**checked_splitted(char *av)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 1;
+// 	while (av[i])
+// 	{
+// 		if (av[i] != ' ' || av[i] != '+'
+// 			|| av[i] != '-' || (av[i] >= '0' && av[i] <= '9'))
+// 			p_exit(1);
+// 	}
+	
+// }

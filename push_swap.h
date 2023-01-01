@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/31 15:13:53 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:47:54 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ t_node	*ft_lstnew(int content);
 void	ft_putc(char c);
 int		get_arr_len(char **str);
 void	ft_puts(char *str);
+void	p_exit(int code);
+
 
 #endif
