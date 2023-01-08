@@ -6,27 +6,42 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 21:09:33 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/30 12:33:37 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/08 13:23:07 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_first_two(t_node *v)
+void	sa(t_node *a)
+{
+	t_node	*head;
+	int	temp;
+
+	if (!a || !a->next)
+		return ;
+	temp = a->element;
+	a->element = a->next->element;
+	a->next->element = temp;
+	ft_puts("sa\n");
+}
+
+void	sb(t_node *b)
 {
 	int	temp;
 
-	if (!v || !v->next)
+	if (!b || !b->next)
 		return ;
-	temp = v->element;
-	v->element = v->next->element;
-	v->next->element = temp;
+	temp = b->element;
+	b->element = b->next->element;
+	b->next->element = temp;
+	ft_puts("sb\n");
 }
 
-void	swap_stack(t_node **stack_a, t_node **stack_b)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
 	if (!(*stack_a) && !(*stack_b))
 		return ;
-	swap_first_two(*stack_a);
-	swap_first_two(*stack_b);
+	sa(*stack_a);
+	sb(*stack_b);
+	ft_puts("ss\n");
 }

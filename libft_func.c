@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 21:26:53 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/01 21:53:15 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/03 20:36:33 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,21 @@ char	*ft_strjoin(char *s1, char *s2)
 		str[i++] = s2[c++];
 	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	free(s1);
+	return (str);
+}
+
+char	*ft_joined(char **av)
+{
+	int		i;
+	char	*str;
+
+	i = 1;
+	str = NULL;
+	while (av[i])
+	{
+		str = ft_strjoin(str, av[i]);
+		str = ft_strjoin(str, " ");
+		i++;
+	}
 	return (str);
 }

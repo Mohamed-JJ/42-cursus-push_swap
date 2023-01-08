@@ -1,55 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   check_instruction.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/03 15:38:28 by mjarboua         ###   ########.fr       */
+/*   Created: 2023/01/06 20:48:55 by mjarboua          #+#    #+#             */
+/*   Updated: 2023/01/06 20:49:55 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*convert_arr(char **str)
+int	ft_get_before_index(t_node **a, int index)
 {
 	int	i;
-	int	*ptr;
 
 	i = 0;
-	ptr = malloc((get_arr_len(str)) * sizeof(int));
-	while (*str)
+	while ((*a))
 	{
-		ptr[i] = ft_atoi(*str);
 		i++;
-		str++;
+		if ((*a)->index == index)
+			break ;
+		(*a) = (*a)->next;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (i);
 }
 
-void	check_if_double(int *arr)
+int	ft_get_after_index(t_node **a, int index)
 {
-	int	i;
-	int	j;
-	int	holder;
-	int	count;
+	int		i;
+	t_node	*head;
 
 	i = 0;
-	while (arr[i])
+	head = (*a);
+	while ((*a))
 	{
-		holder = arr[i];
-		count = 0;
-		j = 0;
-		while (arr[j])
+		if ((*a)->index == index)
 		{
-			if (arr[i] == arr[j])
-				count++;
-			if (arr[i] == arr[j] && count == 2)
-				p_error(1);
-			j++;
+			while ((*a))
+			{
+				(*a) = (*a)->next;
+				i++;
+			}
 		}
-		i++;
+		if ((*a))
+			(*a) = (*a)->next;
 	}
+	(*a) = head;
+	return (i);
 }

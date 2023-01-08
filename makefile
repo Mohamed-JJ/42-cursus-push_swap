@@ -2,12 +2,17 @@ NAME = push_swap
 
 SRC = write_functions.c \
 		push_swap.c \
-		parsing.c \
 		libft_func.c \
 		libft_func2.c \
-		ft_split.c \
 		split_convert.c \
 		lists.c \
+		alloce_node.c \
+		swap.c \
+		push.c \
+		reverse_rotate.c \
+		indexing.c \
+		ft_sorting1.c \
+		check_instruction.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -30,7 +35,7 @@ clean : $(OBJ)
 
 fclean :
 	@$(RM) $(NAME) $(OBJ)
-
 re : fclean all
+
 
 .PHONY : re clean fclean all

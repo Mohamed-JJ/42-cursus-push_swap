@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
-/*   Updated: 2022/12/31 14:38:34 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/08 13:21:02 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,86 +20,56 @@ void	ft_before_last(t_node **node)
 		(*node) = (*node)->next;
 }
 
-void	push_a_to_b(t_node **a, t_node **b)
+void	pb(t_node **a, t_node **b)
 {
 	t_node	*ptr_a;
-	t_node	*head;
 
-	if (!(*a))
-		return ;
-	head = (*a);
-	ptr_a = ft_last_node((*a));
-	ft_before_last(&head);
-	ft_lstadd_back(b, ptr_a);
-	head->next = NULL;
-	a = &head;
+	ptr_a = (*a);
+	(*a) = (*a)->next;
+	ptr_a->next = NULL;
+	ft_lstadd_front(b, ptr_a);
+	write(1, "pb\n", 3);
 }
 
-void	push_b_to_a(t_node **a, t_node **b)
+void	ra(t_node **a)
 {
-	t_node	*ptr_a;
+	t_node	*temp;
 	t_node	*head;
 
-	if (!(*a))
-		return ;
-	head = (*b);
-	ptr_a = ft_last_node((*b));
-	ft_before_last(&head);
-	ft_lstadd_back(a, ptr_a);
-	head->next = NULL;
-	b = &head;
+	temp = (*a);
+	head = (*a)->next;
+	(*a) = (*a)->next;
+	while ((*a)->next)
+		(*a) = (*a)->next;
+	temp->next = NULL;
+	(*a)->next = temp;
+	(*a) = (*a)->next;
+	(*a) = head;
+	write(1, "ra\n", 3);
 }
 
-// int	main(int ac, char **av)
-// {
-// 	t_node	*l;
-// 	t_node	*l1;
-// 	t_node	*l2;
-// 	t_node	*l3;
-// 	t_node	*s;
-// 	t_node	*s1;
-// 	t_node	*s2;
-// 	t_node	*s3;
+void	rb(t_node **b)
+{
+	t_node	*temp;
+	t_node	*head;
 
-// 	(void)ac;
-// 	(void)av;
-// 	l = malloc(sizeof(t_node));
-// 	l1 = malloc(sizeof(t_node));
-// 	s = malloc(sizeof(t_node));
-// 	s1 = malloc(sizeof(t_node));
-// 	l2 = malloc(sizeof(t_node));
-// 	l3 = malloc(sizeof(t_node));
-// 	s2 = malloc(sizeof(t_node));
-// 	s3 = malloc(sizeof(t_node));
-// 	l->element = 1;
-// 	l1->element = 2;
-// 	l2->element = 3;
-// 	l3->element = 4;
-// 	l->next = l1;
-// 	l1->next = l2;
-// 	l2->next = l3;
-// 	l3->next = NULL;
-// 	s->element = 5;
-// 	s1->element = 6;
-// 	s2->element = 7;
-// 	s3->element = 8;
-// 	s->next = s1;
-// 	s1->next = s2;
-// 	s2->next = s3;
-// 	s3->next = NULL;
-// 	push_b_to_a(&l, &s);
-// 	while (l)
-// 	{
-// 		printf("the first l node's content --> %d\n", l->element);
-// 		l = l->next;
-// 	}
-// 	printf("\n");
-// 	while (s)
-// 	{
-// 		printf("the first s node's content --> %d\n", s->element);
-// 		s = s->next;
-// 	}
-// 	free(s);
-// 	free(l);
-// 	return (0);
-// }
+	if ((*b)->next == NULL)
+		return ;
+	temp = (*b);
+	head = (*b)->next;
+	(*b) = (*b)->next;
+	while ((*b)->next)
+		(*b) = (*b)->next;
+	temp->next = NULL;
+	(*b)->next = temp;
+	(*b) = (*b)->next;
+	(*b) = head;
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_node **a, t_node **b)
+{
+	ra(a);
+	rb(b);
+	write(1, "rr\n", 3);
+}

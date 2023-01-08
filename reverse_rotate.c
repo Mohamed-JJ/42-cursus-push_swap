@@ -6,13 +6,13 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 16:39:39 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/01 17:52:33 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/08 13:22:16 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_node **a)
+void	rra(t_node **a)
 {
 	t_node	*temp;
 	t_node	*head;
@@ -25,9 +25,10 @@ void	ra(t_node **a)
 	head->next = NULL;
 	temp->next = ptr;
 	(*a) = temp;
+	ft_puts("rra\n");
 }
 
-void	rb(t_node **b)
+void	rrb(t_node **b)
 {
 	t_node	*temp;
 	t_node	*head;
@@ -40,10 +41,12 @@ void	rb(t_node **b)
 	head->next = NULL;
 	temp->next = ptr;
 	(*b) = temp;
+	ft_puts("rrb\n");
 }
 
 void	rrr(t_node **a, t_node **b)
 {
-	reverse_rotate_a(a);
-	reverse_rotate_b(b);
+	rra(a);
+	rrb(b);
+	ft_puts("rrr\n");
 }
