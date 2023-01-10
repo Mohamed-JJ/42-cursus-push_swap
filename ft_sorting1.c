@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 19:54:09 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/08 12:28:35 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/10 20:30:39 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,22 @@
 
 void	ft_sort_two(t_node **a)
 {
-	sa((*a));
+	sa(a);
 }
 
 void	ft_sort_three(t_node **a)
 {
 	t_node	*h;
 
+	give_them_index(a);
 	h = (*a);
 	if ((*a)->index == 1 && (*a)->next->index == 0
 		&& (*a)->next->next->index == 2)
-		sa((*a));
+		sa(a);
 	else if ((*a)->index == 2 && (*a)->next->index == 1
 		&& (*a)->next->next->index == 0)
 	{
-		sa((*a));
+		sa(a);
 		rra(a);
 	}
 	else if ((*a)->index == 2 && (*a)->next->index == 0
@@ -58,7 +59,7 @@ void	ft_sort_three(t_node **a)
 	else if ((*a)->index == 0 && (*a)->next->index == 2
 		&& (*a)->next->next->index == 1)
 	{
-		sa((*a));
+		sa(a);
 		ra(a);
 	}
 	else

@@ -20,7 +20,7 @@ RM = rm -rf
 
 CC = cc
 
-# FLAGS = -Wall -Wextra -Werror
+# FLAGS = -fsanitize=address
 
 all : $(NAME)
 

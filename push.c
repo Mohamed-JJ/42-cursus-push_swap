@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/08 13:21:02 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:05:16 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,17 @@ void	pb(t_node **a, t_node **b)
 	ptr_a->next = NULL;
 	ft_lstadd_front(b, ptr_a);
 	write(1, "pb\n", 3);
+}
+
+void	pa(t_node **a, t_node **b)
+{
+	t_node	*ptr_b;
+
+	ptr_b = (*b);
+	(*b) = (*b)->next;
+	ptr_b->next = NULL;
+	ft_lstadd_front(a, ptr_b);
+	write(1, "pa\n", 3);
 }
 
 void	ra(t_node **a)
@@ -67,9 +78,4 @@ void	rb(t_node **b)
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_node **a, t_node **b)
-{
-	ra(a);
-	rb(b);
-	write(1, "rr\n", 3);
-}
+

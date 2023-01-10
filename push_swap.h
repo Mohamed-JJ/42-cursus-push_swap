@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/07 20:41:04 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:26:07 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	rrb(t_node **b);
 void	rrr(t_node **a, t_node **b);
 void	pb(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
-void	sa(t_node *a);
-void	sb(t_node *b);
+void	sa(t_node **a);
+void	sb(t_node **b);
 int		ft_get_before_index(t_node **a, int index);
 int		ft_get_after_index(t_node **a, int index);
 void	push_to_b(t_node **a, t_node **b);
