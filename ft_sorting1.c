@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 19:54:09 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/12 18:06:22 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:45:36 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_sort_five(t_node **a, t_node **b)
 		}
 		if (v.i == -1)
 			break ;
-		if (ft_get_after_index(a, v.i) > v.j / 2)
+		if (ft_get_index_position(*a, v.i) > v.j / 2)
 			ra(a);
 		else
 			rra(a);

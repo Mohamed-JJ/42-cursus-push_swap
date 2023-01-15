@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/14 18:39:19 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/15 20:02:06 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ typedef struct l_node
 
 // array handling functions
 int		ft_atoi(char *str);
-int		*split_arr(char *str);
-int		*convert_arr(char **str);
 int		ft_strlen(char *s);
 char	*ft_substr(char *s, int start, int len);
 char	**ft_split(char const *s, char c);
@@ -65,8 +63,6 @@ void	pb(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
 void	sa(t_node **a);
 void	sb(t_node **b);
-int		ft_get_before_index(t_node **a, int index);
-int		ft_get_after_index(t_node **a, int index);
 void	push_to_b(t_node **a, t_node **b);
 int		ft_lstsize(t_node *d);
 int		are_sorted(t_node *a);
@@ -88,8 +84,10 @@ void	ft_send_to_b(t_node **a, t_node **b);
 void	ft_putc(char c);
 int		get_arr_len(char **str);
 void	ft_puts(char *str);
-void	p_exit(int code);
 void	p_error(int code);
 int		ft_get_index_position(t_node *d, int index);
+char	*ft_joined(char **av);
+
+
 
 #endif
