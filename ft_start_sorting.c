@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:43:46 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/15 15:09:50 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/15 16:37:49 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ void	ft_send_to_b(t_node **a, t_node **b)
 
 	v.i = 0;
 	v.size = ft_lstsize(*a) - 1;
+	if (v.size+1 < 101)
+		v.j  = 15;
+	else if (v.size+1 > 100)
+		v.j  = 35;
 	while ((*a))
 	{
-		v.j = v.size / 2;
 		if ((*a)->index <= v.i)
 		{
 			pb(a, b);
@@ -82,34 +85,27 @@ void	ft_sorted(t_node **a, t_node **b)
 	int	size;
 
 	size = ft_lstsize(*b);
-	while (size)
+
+	while (*b)
 	{
 		size = ft_lstsize(*b) - 1;
-		if (!size)
-		{
-			pa(a, b);
-			return ;
-		}
-		j = size / 2;
 		i = ft_get_index_position(*b, size);
 		if ((*b)->index == size)
-		{
 			pa(a, b);
-		}
-		else if (i > j)
+		else if (i > size / 2)
 		{
-			i = size - i + 1;
-			while (i)
-			{
-				rrb(b);
-				i--;
-			}
+			rrb(b);
+			// i = size - i + 1;
+			// while (i)
+			// {
+			// 	i--;
+			// }
 		}
 		else
-		while (i)
+			// while (i)
 			{
 				rb(b);
-				i--;
+				// i--;
 			}
 	}
 }

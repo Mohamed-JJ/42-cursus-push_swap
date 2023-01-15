@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:41 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/15 15:11:02 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/15 17:05:11 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ int	main(int ac, char **av)
 	// printf("\n");
 	a = h;
 	ft_send_to_b(&a, &b);
-	// while (a)
-	// {
-	// 	printf("the content %d the index %d\n", a->element, a->index);
-	// 	a = a->next;
-	// }
+	while (a)
+	{
+		printf("the content %d the index %d\n", a->element, a->index);
+		a = a->next;
+	}
 	return (0);
 }
