@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/10 14:05:16 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:58:38 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	pa(t_node **a, t_node **b)
 {
 	t_node	*ptr_b;
 
+	if (!(*b))
+		return ;
 	ptr_b = (*b);
 	(*b) = (*b)->next;
 	ptr_b->next = NULL;

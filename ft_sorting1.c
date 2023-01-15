@@ -6,32 +6,73 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 19:54:09 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/10 20:30:39 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/12 18:06:22 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_sort_four(t_node **a, t_node **b)
-// {
-// 	int		size;
-// 	t_node	*h;
+typedef struct l_data
+{
+	int	size;
+	int	i;
+	int	j;
+}				t_data;
 
-// 	size = ft_lstsize((*a));
-// 	h = (*a);
-// 	while ((*a))
-// 	{
-// 		if ((*a)->index == size)
-// 		{
-// 			pa(a, b);
-// 			break ;
-// 		}
-// 		ra(a);
-// 	}
-// 	ft_sort_three(a);
-// 	pa(b, a);
-// 	ra(a);
-// }
+void	ft_sort_five(t_node **a, t_node **b)
+{
+	t_data	v;
+
+	v.i = 1;
+	v.size = 0;
+	while ((*a))
+	{
+		v.j = ft_lstsize(*a) - 1;
+		if ((*a)->index == v.i)
+		{
+			pb(a, b);
+			v.i--;
+		}
+		if (v.i == -1)
+			break ;
+		if (ft_get_after_index(a, v.i) > v.j / 2)
+			ra(a);
+		else
+			rra(a);
+	}
+	ft_sort_three(a);
+	sb(b);
+	pa(a, b);
+	pa(a, b);
+	give_them_index(a);
+}
+
+void	ft_sort_four(t_node **a, t_node **b)
+{
+	int		size;
+	int		i;
+	int		j;
+	t_node	*h;
+
+	size = ft_lstsize((*a));
+	h = (*a);
+	while ((*a))
+	{
+		if ((*a)->index == size - 1)
+		{
+			pb(a, b);
+			break ;
+		}
+		else
+			ra(a);
+	}
+	if (ft_lstsize(*b) - 1 == 1)
+		sb(b);
+	ft_sort_three(a);
+	pb(b, a);
+	ra(a);
+	printf("here\n");
+}
 
 void	ft_sort_two(t_node **a)
 {

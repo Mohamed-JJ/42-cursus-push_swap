@@ -12,7 +12,8 @@ SRC = write_functions.c \
 		reverse_rotate.c \
 		indexing.c \
 		ft_sorting1.c \
-		check_instruction.c
+		check_instruction.c \
+		ft_start_sorting.c \
 
 OBJ = $(SRC:.c=.o)
 

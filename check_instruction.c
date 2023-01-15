@@ -6,25 +6,26 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 20:48:55 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/06 20:49:55 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:04:33 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_get_before_index(t_node **a, int index)
+int	chunk_size(t_node **a)
 {
-	int	i;
+	int	chunk;
+	int	size;
 
-	i = 0;
-	while ((*a))
+	size = ft_lstsize(*a) - 1;
+	if (size < 200)
 	{
-		i++;
-		if ((*a)->index == index)
-			break ;
-		(*a) = (*a)->next;
+		chunk = 20;
+		printf("here chunk size %d \n", size);
 	}
-	return (i);
+	else if (ft_lstsize(*a) >= 200)
+		chunk = 40;
+	return (chunk);
 }
 
 int	ft_get_after_index(t_node **a, int index)
