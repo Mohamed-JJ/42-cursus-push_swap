@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/15 20:02:06 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/16 14:08:19 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct l_node
 // int		check_sign(char **a);
 // char	**ft_clear(char *str);
 // int		ft_strchr(char c, char *set);
+int	check_sign(char	**a);
+
 
 // array handling functions
 int		ft_atoi(char *str);

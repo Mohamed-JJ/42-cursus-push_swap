@@ -3,6 +3,7 @@ NAME = push_swap
 SRC = write_functions.c \
 		push_swap.c \
 		libft_func.c \
+		ft_split.c \
 		libft_func2.c \
 		split_convert.c \
 		lists.c \
