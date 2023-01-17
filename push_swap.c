@@ -6,22 +6,24 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:41 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 21:29:05 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 22:25:00 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	check_if_max_min(t_node **a)
-// {
-// 	while (*a)
-// 	{
-// 		if (*a->element > 2147483647 || *a->element < -2147483648)
-// 			p_error(1);
-// 		a = a->next;
-// 	}
-// 	return (0);
-// }
+void	free_all(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 
 int	are_sorted(t_node *a)
 {
@@ -62,6 +64,7 @@ t_node	*join_split(char **av, int ac)
 		|| check_sign(a) || check_after_num(a))
 		return (NULL);
 	ab = ft_allocatenode(a);
+	free_all(a);
 	if (check_if_double(&ab) || are_sorted(ab))
 		return (NULL);
 	return (ab);
@@ -77,5 +80,6 @@ int	main(int ac, char **av)
 	a = join_split(av, ac);
 	give_them_index(&a);
 	check_list_size(&a, &b);
+	free_nodes(&a);
 	return (0);
 }

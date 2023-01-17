@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 21:37:05 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 22:23:31 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,9 @@ int		check_if_num(char **a);
 int		check_sign(char **a);
 int		check_if_double(t_node **a);
 
-
 //libft functions
 
-static int overf(int res, int pre, int sign);
-
-int ft_atoi(char *str);
+int		ft_atoi(char *str);
 int		ft_strlen(char *s);
 char	*ft_substr(char *s, int start, int len);
 char	**ft_split(char const *s, char c);
@@ -92,10 +89,8 @@ void	ft_puts(char *str);
 void	p_error(int code);
 int		ft_get_index_position(t_node *d, int index);
 char	*ft_joined(char **av);
-
 t_node	*join_split(char **av, int ac);
-
-
+void	free_nodes(t_node **a);
 void	push_sghir(t_node **a, t_node **b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 14:42:20 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/01 18:02:40 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 22:00:19 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	rotate_a(t_node **a)
 	t_node	*temp;
 	t_node	*head;
 
+	if ((*a))
+		return ;
 	temp = (*a);
 	head = (*a)->next;
 	(*a) = (*a)->next;
@@ -26,7 +28,6 @@ void	rotate_a(t_node **a)
 	(*a)->next = temp;
 	(*a) = (*a)->next;
 	(*a) = head;
-	// (*a) = head;
 }
 
 void	rotate_b(t_node **b)
@@ -34,6 +35,8 @@ void	rotate_b(t_node **b)
 	t_node	*temp;
 	t_node	*head;
 
+	if ((*b))
+		return ;
 	temp = (*b);
 	head = (*b)->next;
 	(*b) = (*b)->next;
@@ -43,7 +46,6 @@ void	rotate_b(t_node **b)
 	(*b)->next = temp;
 	(*b) = (*b)->next;
 	(*b) = head;
-	// (*b) = head;
 }
 
 void	rr(t_node **a, t_node **b)

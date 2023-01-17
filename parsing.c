@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 17:46:48 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 22:24:17 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ int	check_if_double(t_node **a)
 	}
 	(*a) = h1;
 	return (0);
+}
+
+void	free_nodes(t_node **a)
+{
+	while ((*a))
+	{
+		free((*a));
+		(*a) = (*a)->next;
+	}
+	free((*a));
 }
