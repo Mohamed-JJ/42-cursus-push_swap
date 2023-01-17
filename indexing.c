@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 20:50:21 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/06 20:53:23 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:07:37 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	give_them_index(t_node **a)
 {
 	t_node	*h;
+	t_node	*s;
 	t_node	*head1;
 
 	h = (*a);
+	s = (*a);
 	zero_index(a);
 	while (h)
 	{

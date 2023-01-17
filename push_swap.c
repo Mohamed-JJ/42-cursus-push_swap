@@ -6,148 +6,48 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:41 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/16 21:28:58 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 21:29:05 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_push_swap(t_node	**b, t_node **a, char **av)
+// int	check_if_max_min(t_node **a)
 // {
-// 	a = ft_allocatenode(av);
-// 	give_them_index(&a);
-// }
-
-int	check_sign(char **a)
-{
-	int	i;
-	int	j;
-	int	s;
-
-	i = 1;
-	while (a[i])
-	{
-		j = 0;
-		s = 0;
-		while (a[i][j])
-		{
-			if (a[i][j] == '+' || a[i][j] == '-')
-				s++;
-			j++;
-		}
-		if (s > 1)
-			p_error(1);
-		i++;
-	}
-	return (0);
-}
-
-int	check_if_num(char **a)
-{
-	int		i;
-	int		j;
-	char	*s;
-	int		c;
-	int		h;
-
-	i = 1;
-	s = "0123456789-+ ";
-	while (a[i])
-	{
-		j = 0;
-		while (a[i][j])
-		{
-			if (!(a[i][j] >= '0' && a[i][j] <= '9'))
-				p_error(1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	check_spaces(char **a)
-{
-	int	i;
-	int	j;
-	int	s;
-
-	i = 1;
-	while (a[i])
-	{
-		j = 0;
-		s = 0;
-		if (ft_strlen(a[i]) == 0)
-		{
-			p_error(1);
-		}
-		while (a[i][j])
-		{
-			if (a[i][j] >= '0' && a[i][j] <= '9')
-				s++;
-			j++;
-		}
-		if (s == 0)
-			p_error(1);
-		i++;
-	}
-	return (0);
-}
-
-int	checck_after_num(char **b)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (b[i])
-	{
-		j = 0;
-		while (b[i][j])
-		{
-			if (b[i][j] >= '0' && b[i][j] <= '9')
-			{
-				while (b[i][j])
-				{
-					if (!(b[i][j] >= '0' && b[i][j] <= '9') && b[i][j] != ' ')
-					{
-						// printf("%c", b[i][j]);
-						p_error(1);
-					}
-					j++;
-				}
-			}
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-// int	are_sorted(t_node *a)
-// {
-// 	t_node	*h;
-
-// 	h = a;
-// 	while (a)
+// 	while (*a)
 // 	{
-// 		h = a;
-// 		while (h)
-// 		{
-// 			if (a->element > h->element)
-// 				return (0);
-// 			h = h->next;
-// 		}
+// 		if (*a->element > 2147483647 || *a->element < -2147483648)
+// 			p_error(1);
 // 		a = a->next;
 // 	}
-// 	return (1);
+// 	return (0);
 // }
 
-void	join_split(char **av, int ac)
+int	are_sorted(t_node *a)
+{
+	t_node	*h;
+
+	h = a;
+	while (a)
+	{
+		h = a;
+		while (h)
+		{
+			if (a->element > h->element)
+				return (0);
+			h = h->next;
+		}
+		a = a->next;
+	}
+	return (1);
+}
+
+t_node	*join_split(char **av, int ac)
 {
 	int		i;
 	char	**a;
 	char	*s;
+	t_node	*ab;
 
 	i = 0;
 	if (ac > 2)
@@ -158,8 +58,13 @@ void	join_split(char **av, int ac)
 	}
 	else if (ac == 2)
 		a = ft_split(av[1], ' ');
-	if (check_spaces(a) || check_if_num(a) || check_sign(a) || checck_after_num(a))
-		return ;
+	if (check_spaces(a) || check_if_num(a)
+		|| check_sign(a) || check_after_num(a))
+		return (NULL);
+	ab = ft_allocatenode(a);
+	if (check_if_double(&ab) || are_sorted(ab))
+		return (NULL);
+	return (ab);
 }
 
 int	main(int ac, char **av)
@@ -169,9 +74,8 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 		p_error(1);
-		// printf("%d")
-	// printf("%d\n", check_spaces(av));
-	join_split(av, ac);
-	
+	a = join_split(av, ac);
+	give_them_index(&a);
+	check_list_size(&a, &b);
 	return (0);
 }

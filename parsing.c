@@ -6,50 +6,35 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/03 15:38:28 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:46:48 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*convert_arr(char **str)
+int	check_if_double(t_node **a)
 {
-	int	i;
-	int	*ptr;
+	int		holder;
+	int		count;
+	t_node	*h;
+	t_node	*h1;
 
-	i = 0;
-	ptr = malloc((get_arr_len(str)) * sizeof(int));
-	while (*str)
+	h1 = (*a);
+	while ((*a))
 	{
-		ptr[i] = ft_atoi(*str);
-		i++;
-		str++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
-}
-
-void	check_if_double(int *arr)
-{
-	int	i;
-	int	j;
-	int	holder;
-	int	count;
-
-	i = 0;
-	while (arr[i])
-	{
-		holder = arr[i];
+		holder = (*a)->element;
 		count = 0;
-		j = 0;
-		while (arr[j])
+		h = (*a);
+		while (h)
 		{
-			if (arr[i] == arr[j])
+			if (holder == h->element)
 				count++;
-			if (arr[i] == arr[j] && count == 2)
+			if (h->element == holder && count >= 2)
 				p_error(1);
-			j++;
+			h = h->next;
 		}
-		i++;
+		(*a) = (*a)->next;
 	}
+	(*a) = h1;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 19:54:09 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/15 19:45:36 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 21:17:14 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,26 @@ typedef struct l_data
 void	ft_sort_five(t_node **a, t_node **b)
 {
 	t_data	v;
+	int		i;
 
-	v.i = 1;
-	v.size = 0;
-	while ((*a))
+	v.i = 0;
+	i = 0;
+	while (*a)
 	{
-		v.j = ft_lstsize(*a) - 1;
-		if ((*a)->index == v.i)
+		v.size = ft_lstsize(*a) - 1;
+		if ((*a)->index == i)
 		{
 			pb(a, b);
-			v.i--;
+			i++;
+			if (i == 2)
+				break ;
 		}
-		if (v.i == -1)
-			break ;
-		if (ft_get_index_position(*a, v.i) > v.j / 2)
+		else if (ft_get_index_position(*a, 0) < v.size / 2)
 			ra(a);
 		else
 			rra(a);
 	}
 	ft_sort_three(a);
-	sb(b);
 	pa(a, b);
 	pa(a, b);
 	give_them_index(a);
@@ -56,9 +56,10 @@ void	ft_sort_four(t_node **a, t_node **b)
 
 	size = ft_lstsize((*a));
 	h = (*a);
+	give_them_index(a);
 	while ((*a))
 	{
-		if ((*a)->index == size - 1)
+		if ((*a)->index == 0)
 		{
 			pb(a, b);
 			break ;
@@ -66,12 +67,8 @@ void	ft_sort_four(t_node **a, t_node **b)
 		else
 			ra(a);
 	}
-	if (ft_lstsize(*b) - 1 == 1)
-		sb(b);
 	ft_sort_three(a);
-	pb(b, a);
-	ra(a);
-	printf("here\n");
+	pa(b, a);
 }
 
 void	ft_sort_two(t_node **a)
@@ -107,26 +104,17 @@ void	ft_sort_three(t_node **a)
 		rra(a);
 }
 
-
-// void	check_list_size(t_node **a)
-// {
-// 	if (ft_lstsize((*a)) == 1)
-// 	{
-// 		printf("hello\n");
-// 		ft_sort_two(a);
-// 	}
-	// else if (ft_lstsize((*a)) == 2)
-	// 	ft_sort_three(a);
-	// else if (ft_lstsize((*a)) == 4)
-	// 	ft_sort_four(a);
-	// else if (ft_lstsize((*a)) == 5)
-	// 	ft_sort_five(a);
-	// else if (ft_lstsize((*a)) < 20)
-	// 	ft_sort_twenty(a);
-	// else if (ft_lstsize((*a)) < 100)
-	// 	ft_sort_hundred(a);
-	// else if (ft_lstsize((*a)) < 500)
-	// 	ft_sort_fivehundred(a);
-// }
-
-
+void	check_list_size(t_node **a, t_node **b)
+{
+	give_them_index(a);
+	if (ft_lstsize((*a)) == 1)
+		ft_sort_two(a);
+	else if (ft_lstsize((*a)) == 2)
+		ft_sort_three(a);
+	else if (ft_lstsize((*a)) == 4)
+		ft_sort_four(a, b);
+	else if (ft_lstsize((*a)) == 5)
+		ft_sort_five(a, b);
+	else if (ft_lstsize((*a)) > 5)
+		ft_send_to_b(a, b);
+}

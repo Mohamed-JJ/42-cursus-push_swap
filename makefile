@@ -15,6 +15,8 @@ SRC = write_functions.c \
 		ft_sorting1.c \
 		check_instruction.c \
 		ft_start_sorting.c \
+		checking_func.c \
+		parsing.c \
 
 OBJ = $(SRC:.c=.o)
 

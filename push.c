@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/15 13:58:38 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 21:19:44 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	pb(t_node **a, t_node **b)
 {
 	t_node	*ptr_a;
 
+	if (!(*a))
+		return ;
 	ptr_a = (*a);
 	(*a) = (*a)->next;
 	ptr_a->next = NULL;
@@ -79,5 +81,3 @@ void	rb(t_node **b)
 	(*b) = head;
 	write(1, "rb\n", 3);
 }
-
-

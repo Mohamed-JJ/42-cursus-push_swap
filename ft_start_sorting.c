@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:43:46 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/15 16:37:49 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 21:17:45 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	ft_send_to_b(t_node **a, t_node **b)
 
 	v.i = 0;
 	v.size = ft_lstsize(*a) - 1;
-	if (v.size+1 < 101)
-		v.j  = 15;
-	else if (v.size+1 > 100)
-		v.j  = 35;
+	if (v.size + 1 < 101)
+		v.j = 15;
+	else if (v.size + 1 > 100)
+		v.j = 35;
 	while ((*a))
 	{
 		if ((*a)->index <= v.i)
@@ -48,34 +48,6 @@ void	ft_send_to_b(t_node **a, t_node **b)
 	}
 	ft_sorted(a, b);
 }
-// int half(t_node *b, int i, int size, int *res)
-// {
-// 	int a;
-// 	int elem;
-// 	t_node *save;
-
-// 	a = 0;
-// 	save = b;
-// 	while(a < i)
-// 	{
-// 		elem = b -> element;
-// 		b = b -> next;
-// 		a++;
-// 	}
-// 	printf("->> %d\n", elem);
-// 	a = 0;
-// 	while(a < size)
-// 	{
-// 		if(save -> element == elem)
-// 			break ;
-// 		a++;
-// 		save = save -> next;
-// 	}
-// 	*res = elem;
-// 	if(a < (size / 2))
-// 		return (1);
-// 	return (0);
-// }
 
 void	ft_sorted(t_node **a, t_node **b)
 {
@@ -85,7 +57,6 @@ void	ft_sorted(t_node **a, t_node **b)
 	int	size;
 
 	size = ft_lstsize(*b);
-
 	while (*b)
 	{
 		size = ft_lstsize(*b) - 1;
@@ -93,20 +64,9 @@ void	ft_sorted(t_node **a, t_node **b)
 		if ((*b)->index == size)
 			pa(a, b);
 		else if (i > size / 2)
-		{
 			rrb(b);
-			// i = size - i + 1;
-			// while (i)
-			// {
-			// 	i--;
-			// }
-		}
 		else
-			// while (i)
-			{
-				rb(b);
-				// i--;
-			}
+			rb(b);
 	}
 }
 

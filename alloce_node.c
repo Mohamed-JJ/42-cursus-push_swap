@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 12:50:13 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/04 16:52:31 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:32:58 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_node	*ft_allocatenode(char **av)
 	int		i;
 	t_node	*head;
 
-	i = 1;
+	i = 0;
 	head = NULL;
 	while (av[i])
 	{

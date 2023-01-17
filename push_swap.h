@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/16 14:08:19 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/17 21:37:05 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,30 @@ typedef struct l_node
 	struct l_node	*next;
 }				t_node;
 
-// parsing function
-// int		check_number(char *str);
-// int		check_number_arr(char **str);
-// void	check_if_double(int *arr);
-// t_node	*ft_allocatenode(char	**str);
-// t_node	*ft_checked(char **av, int ac);
-// char	*ft_joined(char **av);
-// int		check_sign(char **a);
-// char	**ft_clear(char *str);
-// int		ft_strchr(char c, char *set);
-int	check_sign(char	**a);
+//parsing functions
+
+int		check_sign(char	**a);
+void	check_if_sorted(t_node **a);
+int		check_after_num(char **b);
+int		check_spaces(char **a);
+int		check_if_num(char **a);
+int		check_sign(char **a);
+int		check_if_double(t_node **a);
 
 
-// array handling functions
-int		ft_atoi(char *str);
+//libft functions
+
+static int overf(int res, int pre, int sign);
+
+int ft_atoi(char *str);
 int		ft_strlen(char *s);
 char	*ft_substr(char *s, int start, int len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(char *s1);
 char	*ft_strjoin(char *s1, char *s2);
 
-// list functions
+//list functions
+
 t_node	*ft_last_node(t_node *node);
 t_node	*ft_lstnew(int content);
 t_node	*ft_allocatenode(char **av);
@@ -69,13 +71,14 @@ void	push_to_b(t_node **a, t_node **b);
 int		ft_lstsize(t_node *d);
 int		are_sorted(t_node *a);
 
-// sorting function
+//sorting functions
 
-void	check_list_size(t_node **a);
+void	check_list_size(t_node **a, t_node **b);
 void	ft_sort_two(t_node **a);
 void	ft_sort_three(t_node **a);
 void	ft_sort_five(t_node **a, t_node **b);
 int		chunk_size(t_node **a);
+void	ft_sort_four(t_node **a, t_node **b);
 void	ft_sort_more(t_node **a, t_node **b);
 void	ft_sorted(t_node **a, t_node **b);
 void	ft_position(t_node **b);
@@ -90,6 +93,9 @@ void	p_error(int code);
 int		ft_get_index_position(t_node *d, int index);
 char	*ft_joined(char **av);
 
+t_node	*join_split(char **av, int ac);
 
+
+void	push_sghir(t_node **a, t_node **b);
 
 #endif
