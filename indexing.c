@@ -6,11 +6,24 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 20:50:21 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 18:07:37 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:18:30 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+void	free_all_1(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 
 void	give_them_index(t_node **a)
 {
@@ -45,4 +58,31 @@ void	zero_index(t_node **a)
 		(*a) = (*a)->next;
 	}
 	(*a) = head;
+}
+
+int	check_if_not_num(char **a)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (a[i])
+	{
+		j = 0;
+		while (a[i][j])
+		{
+			if ((!ft_isdigit(a[i][j])) && a[i][j] != '+' && a[i][j] != '-')
+				p_error(1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	ft_isdigit(int c)
+{
+	if (!(c >= '0' && c <= '9'))
+		return (0);
+	return (1);
 }

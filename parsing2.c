@@ -6,36 +6,22 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 21:38:14 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 21:18:21 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:07:20 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_sign(char **a)
-{
-	int	i;
-	int	j;
-	int	c;
-	int	c1;
+// 
 
-	i = 0;
-	while (a[i])
-	{
-		c = 0;
-		c1 = 0;
-		j = 0;
-		while (a[i][j])
-		{
-			if (a[i][j] == '+' || a[i][j] == '-')
-				c++;
-			if (a[i][j] >= '0' && a[i][j] <= '9')
-				c1++;
-			j++;
-		}
-		if (c > 1 || (c >= 1 && c1 == 0))
-			return (1);
-		i++;
-	}
-	return (0);
-}
+// t_node	*ft_lstnew_checker(char *content)
+// {
+// 	t_node	*new;
+
+// 	new = malloc(sizeof(t_node));
+// 	if (!new)
+// 		return (NULL);
+// 	new->arr = content;
+// 	new->next = NULL;
+// 	return (new);
+// }

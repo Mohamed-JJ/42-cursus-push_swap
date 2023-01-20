@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 19:54:09 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 21:17:14 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:09:06 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_sort_five(t_node **a, t_node **b)
 			if (i == 2)
 				break ;
 		}
-		else if (ft_get_index_position(*a, 0) < v.size / 2)
+		else if (ft_get_index_position(*a, i) < v.size / 2)
 			ra(a);
 		else
 			rra(a);
@@ -50,8 +50,6 @@ void	ft_sort_five(t_node **a, t_node **b)
 void	ft_sort_four(t_node **a, t_node **b)
 {
 	int		size;
-	int		i;
-	int		j;
 	t_node	*h;
 
 	size = ft_lstsize((*a));
@@ -82,6 +80,8 @@ void	ft_sort_three(t_node **a)
 
 	give_them_index(a);
 	h = (*a);
+	if (are_sorted((*a)))
+		return ;
 	if ((*a)->index == 1 && (*a)->next->index == 0
 		&& (*a)->next->next->index == 2)
 		sa(a);
@@ -107,9 +107,9 @@ void	ft_sort_three(t_node **a)
 void	check_list_size(t_node **a, t_node **b)
 {
 	give_them_index(a);
-	if (ft_lstsize((*a)) == 1)
+	if (ft_lstsize((*a)) == 2)
 		ft_sort_two(a);
-	else if (ft_lstsize((*a)) == 2)
+	else if (ft_lstsize((*a)) == 3)
 		ft_sort_three(a);
 	else if (ft_lstsize((*a)) == 4)
 		ft_sort_four(a, b);

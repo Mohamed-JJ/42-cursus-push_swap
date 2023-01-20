@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   instructions_bns.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/19 13:11:49 by mjarboua         ###   ########.fr       */
+/*   Created: 2023/01/19 13:08:28 by mjarboua          #+#    #+#             */
+/*   Updated: 2023/01/20 12:41:12 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	pb(t_node **a, t_node **b)
 	(*a) = (*a)->next;
 	ptr_a->next = NULL;
 	ft_lstadd_front(b, ptr_a);
-	write(1, "pb\n", 3);
 }
 
 void	pa(t_node **a, t_node **b)
@@ -43,7 +42,6 @@ void	pa(t_node **a, t_node **b)
 	(*b) = (*b)->next;
 	ptr_b->next = NULL;
 	ft_lstadd_front(a, ptr_b);
-	write(1, "pa\n", 3);
 }
 
 void	ra(t_node **a)
@@ -60,7 +58,6 @@ void	ra(t_node **a)
 	(*a)->next = temp;
 	(*a) = (*a)->next;
 	(*a) = head;
-	write(1, "ra\n", 3);
 }
 
 void	rb(t_node **b)
@@ -79,5 +76,4 @@ void	rb(t_node **b)
 	(*b)->next = temp;
 	(*b) = (*b)->next;
 	(*b) = head;
-	write(1, "rb\n", 3);
 }

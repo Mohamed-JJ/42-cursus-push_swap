@@ -6,21 +6,11 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 23:27:32 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/01 17:56:20 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:59:44 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_strlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strdup(char *s1)
 {
@@ -51,9 +41,9 @@ char	*ft_substr(char *s, int start, int len)
 		return (NULL);
 	if (ft_strlen(s) == 0 || len <= 0)
 		return (ft_strdup(""));
-	if (start > ft_strlen(s))
+	if ((size_t)start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (len > ft_strlen(s + start))
+	if ((size_t)len > ft_strlen(s + start))
 		len = ft_strlen(s + start);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)

@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:00:47 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 21:16:44 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:41:49 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,8 @@ int	check_if_num(char **a)
 {
 	int		i;
 	int		j;
-	char	*s;
-	int		c;
-	int		h;
 
 	i = 1;
-	s = "0123456789-+ ";
 	while (a[i])
 	{
 		j = 0;

@@ -6,13 +6,13 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 21:26:53 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 21:32:08 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:31:55 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	overf(int res, int pre, int sign)
+static int	overf(int res, int pre)
 {
 	if (res / 10 != pre)
 		p_error(1);
@@ -41,8 +41,8 @@ int	ft_atoi(char *str)
 		pre = result;
 		result *= 10;
 		result = result + str[i++] - 48;
-		if (overf(result, pre, sign) != 1)
-			return (overf(result, pre, sign));
+		if (overf(result, pre) != 1)
+			return (overf(result, pre));
 	}
 	result *= sign;
 	return (result);

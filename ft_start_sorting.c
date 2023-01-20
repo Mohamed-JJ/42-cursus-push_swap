@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:43:46 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/17 21:17:45 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:15:52 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_send_to_b(t_node **a, t_node **b)
 
 	v.i = 0;
 	v.size = ft_lstsize(*a) - 1;
-	if (v.size + 1 < 101)
+	if (v.size < 101)
 		v.j = 15;
 	else if (v.size + 1 > 100)
 		v.j = 35;
@@ -52,8 +52,6 @@ void	ft_send_to_b(t_node **a, t_node **b)
 void	ft_sorted(t_node **a, t_node **b)
 {
 	int	i;
-	int	j;
-	int	res;
 	int	size;
 
 	size = ft_lstsize(*b);

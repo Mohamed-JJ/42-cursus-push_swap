@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/26 21:09:33 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/20 11:20:01 by mjarboua         ###   ########.fr       */
+/*   Created: 2023/01/18 16:00:51 by mjarboua          #+#    #+#             */
+/*   Updated: 2023/01/18 19:25:27 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_allocatenode(char **av)
+size_t	ft_strlen(char *str)
 {
-	int		i;
-	t_node	*head;
+	size_t	c;
+
+	c = 0;
+	if (!str)
+		return (0);
+	while (str[c] != '\0')
+		c++;
+	return (c);
+}
+
+int	new_line(char *s, int c)
+{
+	int	i;
 
 	i = 0;
-	head = NULL;
-	while (av[i])
+	if (!s)
+		return (0);
+	if (c == '\0')
+		return (0);
+	while (s[i])
 	{
-		ft_lstadd_back(&head, ft_lstnew(ft_atoi(av[i])));
+		if (s[i] == (char) c)
+			return (1);
 		i++;
 	}
-	return (head);
+	return (0);
 }
