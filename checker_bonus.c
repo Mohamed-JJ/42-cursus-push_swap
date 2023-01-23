@@ -6,11 +6,11 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:41:03 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/20 19:35:48 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:46:21 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	are_sorted(t_node *a)
 {

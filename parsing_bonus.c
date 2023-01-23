@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 20:45:51 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:47:41 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	check_if_double(t_node **a)
 {
@@ -66,8 +66,8 @@ int	check_if_only_sign(char **a)
 		{
 			if (ft_isdigit(a[i][j]))
 				n++;
-			if ((a[i][j + 1] == '-' || a[i][j + 1] == '+') && n > 0)
-				p_error(1);
+			if (a[i][j] == '-' || a[i][j] == '+')
+				c++;
 			j++;
 		}
 		if (c != 0 && n == 0)
