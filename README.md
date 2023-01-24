@@ -25,5 +25,5 @@ We had to develop a set of instruction in order to manupilate our stacks, the in
 	i rotate the stack a.
 	now after we have emptied stack a into the temporary stack, i will start pushing the numbers with the biggest index back to a by finding the positision
 	of the index in the stack, we check if the position of the index is less than the (size of the stack / 2) than we just rotate until it gets to the top
-	of the temporary stack then we push it to a. if it is greater than (size / 2) than we reverse rotate it until it gets to the top of the stack than
+	of the temporary stack then we push it to a.if it is greater than (size / 2) than we reverse rotate it until it gets to the top of the stack than
 	we push it. and using this method we have sorted a stack using the least amout of instruction
