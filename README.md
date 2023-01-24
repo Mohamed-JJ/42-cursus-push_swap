@@ -12,7 +12,7 @@ We had to develop a set of instruction in order to manupilate our stacks, the in
   now that our instructions are explained, we can move on to the algorithm i used to get the least amount of instructions to get a perfect score 
   in the assignement.
   
-  first of all we index all our nodes according to their position in the numeric order , for example our represented like this 5 8 4 3 -1 0, their indexes will be be like this : 
+  first of all we index all our nodes according to their position in the numeric order , for example our represented like this 800 -1 5 0 7, their indexes will be be like this : 
 <img width="181" alt="Screen Shot 2023-01-24 at 4 17 03 PM" src="https://user-images.githubusercontent.com/91577008/214333137-2e97360b-8d9d-43d2-8d00-dd85760c74b3.png">
 
 	now that we have a clear idea how we will index our list we move on to sending our nodes to the temporary stack
