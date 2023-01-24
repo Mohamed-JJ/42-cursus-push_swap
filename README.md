@@ -12,8 +12,7 @@ We had to develop a set of instruction in order to manupilate our stacks, the in
   now that our instructions are explained, we can move on to the algorithm i used to get the least amount of instructions to get a perfect score 
   in the assignement.
   
-  first of all we index all our nodes according to their position in the numeric order , for example our represented like this 
-		5 8 4 3 -1 0, their indexes will be be like this
+  first of all we index all our nodes according to their position in the numeric order , for example our represented like this 5 8 4 3 -1 0, their indexes will be be like this : 
 		5 it's index 4
 		8 it's index 5
 		4 it's index 3
