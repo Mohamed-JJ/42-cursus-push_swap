@@ -13,12 +13,8 @@ We had to develop a set of instruction in order to manupilate our stacks, the in
   in the assignement.
   
   first of all we index all our nodes according to their position in the numeric order , for example our represented like this 5 8 4 3 -1 0, their indexes will be be like this : 
-		5 it's index 4
-		8 it's index 5
-		4 it's index 3
-		3 it's index 2
-		-1 it's index 0
-		0 it's index 1
+<img width="181" alt="Screen Shot 2023-01-24 at 4 17 03 PM" src="https://user-images.githubusercontent.com/91577008/214333137-2e97360b-8d9d-43d2-8d00-dd85760c74b3.png">
+
 	now that we have a clear idea how we will index our list we move on to sending our nodes to the temporary stack
 	first we have to find an optimal range to use, for me i used the range of 15 in the case of my stack having 100 number in it.
 	i take the index of. the element at the top of the stack and compare it to the range i specified, if the index is less or equal to the specified range
