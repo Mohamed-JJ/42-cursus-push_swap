@@ -56,7 +56,7 @@ bonus : $(OBJ_B) push_swap.h
 	@$(CC) $(FLAGS) $(OBJ_B) -o checker -g
 
 clean : $(OBJ) $(OBJ_B)
-	@$(RM) $(OBJ) $(OBJB)
+	@$(RM) $(OBJ) $(OBJ_B)
 
 fclean :
 	@$(RM) $(NAME) $(OBJ_B) $(OBJ) checker
