@@ -15,6 +15,8 @@ SRC = write_functions.c \
 		ft_start_sorting.c \
 		checking_func.c \
 		parsing.c \
+		get_next_line.c \
+		get_next_line_utils.c \
 
 SRC_B = checker_bonus.c \
 			write_functions_bonus.c \
@@ -54,7 +56,7 @@ bonus : $(OBJ_B) push_swap.h
 	@$(CC) $(FLAGS) $(OBJ_B) -o checker -g
 
 clean : $(OBJ) $(OBJ_B)
-	@$(RM) $(OBJ) $(OBJ_B)
+	@$(RM) $(OBJ) $(OBJB)
 
 fclean :
 	@$(RM) $(NAME) $(OBJ_B) $(OBJ) checker

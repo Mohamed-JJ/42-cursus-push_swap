@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:41 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 20:44:27 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:32:03 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int ac, char **av)
 	t_node	*b;
 
 	if (ac == 1)
-		p_error(0);
+		p_error(1);
 	a = join_split(av, ac);
 	give_them_index(&a);
 	check_list_size(&a, &b);

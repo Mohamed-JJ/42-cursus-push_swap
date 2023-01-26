@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 16:48:30 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:24:22 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		check_spaces(char **a);
 int		check_if_num(char **a);
 int		check_sign(char **a);
 int		check_if_only_sign(char **a);
-int		check_if_double(t_node **a);
+void	check_if_double(t_node **a);
 
 //libft functions
 

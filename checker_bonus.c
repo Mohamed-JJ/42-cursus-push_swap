@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:41:03 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 16:46:21 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:23:18 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,13 @@ t_node	*join_split(char **av, int ac)
 		free(s);
 	}
 	if (check_spaces(a) || check_if_num(a) || check_if_not_num(a)
-		|| check_sign(a) || check_after_num(a))
+		|| check_sign(a) || check_after_num(a) || check_if_only_sign(a))
 		return (NULL);
 	ab = ft_allocatenode(a);
 	free_all_1(a);
-	if (check_if_double(&ab) || are_sorted(ab))
-		return (NULL);
+	check_if_double(&ab);
+	// are_sorted(ab);
+		// return (NULL);
 	return (ab);
 }
 
@@ -117,6 +118,7 @@ int	main(int ac, char **av)
 		p_error(0);
 	a = join_split(av, ac);
 	i = ft_lstsize(a);
+	// printf("%d here\n", i);
 	c = get_next_line(0);
 	while (c)
 	{
@@ -131,6 +133,5 @@ int	main(int ac, char **av)
 		ft_puts("OK\n");
 	else
 		ft_puts("KO\n");
-	free_nodes(&a);
-	return (0);
+	return (free_nodes(&a), 0);
 }

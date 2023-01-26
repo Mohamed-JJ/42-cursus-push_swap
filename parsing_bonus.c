@@ -6,13 +6,13 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 16:47:41 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:23:59 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	check_if_double(t_node **a)
+void	check_if_double(t_node **a)
 {
 	int		holder;
 	int		count;
@@ -36,7 +36,6 @@ int	check_if_double(t_node **a)
 		(*a) = (*a)->next;
 	}
 	(*a) = h1;
-	return (0);
 }
 
 void	free_nodes(t_node **a)

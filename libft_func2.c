@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 23:27:32 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 20:43:57 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:59:44 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,6 @@ char	*ft_strdup(char *s1)
 	}
 	s2[i] = '\0';
 	return (s2);
-}
-
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
 
 char	*ft_substr(char *s, int start, int len)
