@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 22:25:24 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/22 17:12:14 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:27:48 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_before_last(t_node **node)
 {
-	if (!(*node))
+	if (!(*node) || (*node)->next == NULL)
 		return ;
 	while ((*node)->next->next)
 		(*node) = (*node)->next;

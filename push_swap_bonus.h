@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:56 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/26 19:24:22 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:17:33 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ void	free_all_1(char **str);
 void	check_instruction(char *s, t_node **a, t_node **b);
 int		ft_isdigit(int c);
 int		check_if_not_num(char **a);
+void	tatima(char *c, t_node **a, t_node **b);
 
 #endif

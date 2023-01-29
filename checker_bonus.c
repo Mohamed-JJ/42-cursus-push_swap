@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:41:03 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/26 20:25:41 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:33:54 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	check_instruction(char *c, t_node **a, t_node **b)
 	else if (c[0] == 'p' && c[1] == 'a' && c[2] == '\n' && c[3] == '\0')
 		pa(a, b);
 	else
-		p_error(1);
+		tatima(c, a, b);
 }
 
 int	main(int ac, char **av)

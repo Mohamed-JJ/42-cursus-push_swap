@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 12:50:13 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 16:46:13 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:20:57 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,23 @@ t_node	*ft_allocatenode(char **av)
 		i++;
 	}
 	return (head);
+}
+
+void	rr(t_node **a, t_node **b)
+{
+	if (!(*b) || (*a))
+		return ;
+	ra(a);
+	rb(b);
+}
+
+void	tatima(char *c, t_node **a, t_node **b)
+{
+	if (c[0] == 'r' && c[1] == 'r' && c[2] == '\n' && c[3] == '\0')
+		rr(a, b);
+	else if (c[0] == 'r' && c[1] == 'r' && c[2] == 'r'
+		&& c[3] == '\n' && c[4] == '\0')
+		rrr(a, b);
+	else
+		p_error(1);
 }

@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 16:08:41 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/23 15:32:03 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:01:21 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_node	*join_split(char **av, int ac)
 	ab = ft_allocatenode(a);
 	free_all_1(a);
 	if (check_if_double(&ab) || are_sorted(ab))
-		return (NULL);
+		return (free_nodes(&ab), NULL);
 	return (ab);
 }
 
@@ -65,7 +65,7 @@ int	main(int ac, char **av)
 	t_node	*b;
 
 	if (ac == 1)
-		p_error(1);
+		p_error(0);
 	a = join_split(av, ac);
 	give_them_index(&a);
 	check_list_size(&a, &b);

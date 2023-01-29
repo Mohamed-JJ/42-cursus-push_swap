@@ -6,7 +6,7 @@
 /*   By: mjarboua <mjarboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:15:54 by mjarboua          #+#    #+#             */
-/*   Updated: 2023/01/26 19:23:52 by mjarboua         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:59:06 by mjarboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,11 @@ int	check_if_only_sign(char **a)
 		{
 			if (ft_isdigit(a[i][j]))
 				n++;
-			if (a[i][j] == '-' || a[i][j] == '+')
-				c++;
+			if (ft_isdigit(a[i][j]) &&
+				(a[i][j + 1] == '-' || a[i][j + 1] == '+'))
+				p_error(1);
 			j++;
 		}
-		if (c != 0 && n == 0)
-			p_error(1);
 		i++;
 	}
 	return (0);
